@@ -17,7 +17,8 @@
       </form>
     </nav>
     <div class="container">
-        <%= yield %>
+      <%= render partial: 'flash', flash: flash %>
+      <%= yield %>
     </div>
   </body>
 </html>
