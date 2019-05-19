@@ -1,11 +1,16 @@
 module ApplicationHelper
-  BOOTSTRAP_FLASH_MSG = {
-    success: 'alert-success',
-    error: 'alert-error',
-    alert: 'alert-block',
-    notice: 'alert-info'
-  }
   def bootstrap_class_for_flash(flash_type)
-    BOOTSTRAP_FLASH_MSG.fetch(flash_type, flash_type.to_s)
+    case flash_type
+    when 'success'
+      'alert-success'
+    when 'error'
+      'alert-danger'
+    when 'alert'
+      'alert-warning'
+    when 'notice'
+      'alert-info'
+    else
+      flash_type.to_s
+    end
   end
 end
